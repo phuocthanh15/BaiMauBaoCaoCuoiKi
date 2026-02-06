@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#container{
+    width: 1528px;
+    height: 742px;
+    background-image: linear-gradient(rgb(60, 232, 72),rgb(143, 234, 32),rgb(244, 120, 62));
+}
+#img12{
+    width: 80%;
+    height: 600px;
+    background-image: linear-gradient(rgb(240, 218, 49),rgb(244, 166, 41),rgb(244, 120, 62));
+    position: relative;
+    top: 30px; 
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 4px black;
+}
+#img123 img{
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgb(139, 42, 0);
+    margin-top: 10px;
+    margin-left: 1px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 4px black;
+}
+#img124 img{
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgb(139, 42, 0);
+    margin-top: 70px;
+    margin-left: 1px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 4px black;
+}
+img:hover{
+    opacity: 1;
+   transform: scale(1.2);
+}
+#h11{
+    width: 400px;
+    height: 50px;
+    background-image: linear-gradient(rgb(239, 65, 65),rgb(243, 152, 66),rgb(250, 238, 70));
+    position:absolute;
+    margin-left: 560px;
+    margin-top: -295px;
+    text-align: center;
+    padding-top: 2px;
+    color: white;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius:25px ;
+    box-shadow: 0px 3px 5px black;
+}
+#h11 p{
+    text-decoration: none;
+    color:rgb(238, 223, 223);
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0px 3px 3px rgb(236, 81, 81),1px 1px 1px rgb(220, 121, 28);
+}
+#h12{
+    width: 200px;
+    height: 50px;
+    background-image: linear-gradient(rgb(239, 65, 65),rgb(243, 152, 66),rgb(250, 238, 70));
+    position:absolute;
+    margin-left: 660px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius:25px ;
+    box-shadow: 0px 3px 5px black;
+    padding: 8px;
+}
+#h12 a{
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color:rgb(238, 223, 223);
+    font-size: 23px;
+    font-weight: bold;
+    text-shadow: 0px 3px 3px rgb(236, 81, 81),1px 1px 1px rgb(220, 121, 28);
+}
+#h12:hover{
+    opacity: 0.7;
+    transform: scale(0.7);
+}
