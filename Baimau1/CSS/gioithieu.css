@@ -5,18 +5,25 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
 }
 
 #home {
-    background-image: linear-gradient(rgb(60, 232, 72), rgb(143, 234, 32), rgb(244, 120, 62));
+    /* Giữ background gradient như cũ nhưng chỉnh lại để nội dung about nổi bật */
+    background-image: linear-gradient(135deg, rgb(230, 230, 230), rgb(245, 245, 245), rgb(255, 255, 255));
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* --- HEADER CSS (GIỮ NGUYÊN) --- */
 .main-header {
     background-color: #fff;
     width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
 .header-top {
@@ -34,7 +41,6 @@ body {
     gap: 10px;
 }
 .logo-text i { font-size: 30px; color: #333; }
-
 
 .search-area {
     flex-grow: 1;
@@ -180,7 +186,6 @@ body {
     padding-left: 20px; 
 }
 
-
 .main-menu {
     list-style: none;
     display: flex;
@@ -199,238 +204,206 @@ body {
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
+    opacity: 0.8;
 }
 
-.main-menu li a:hover {
+.main-menu li a:hover, .main-menu li a.active {
     color: #ffcc00;
+    opacity: 1;
 }
-#h11{
-    color: rgb(0, 0, 0);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 35px;
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 3px 3px 3px rgb(74, 68, 68),1px 1px 1px rgb(112, 112, 111);
-    padding-top: 22px;
-    padding-left: 10px;
-    position: absolute;
 
+/* --- CSS RIÊNG CHO TRANG VỀ CHÚNG TÔI --- */
+#section {
+    width: 100%;
+    padding: 0; /* Full width cho hero */
+    flex-grow: 1; 
 }
-#h22 ul li{
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Phần Hero giới thiệu */
+.about-hero {
+    background: #fff;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.about-title {
+    font-family: 'Dancing Script', cursive;
+    color: #cc0000;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.about-desc {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Icon stats */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.stat-item {
+    text-align: center;
+}
+.stat-item i {
+    font-size: 40px;
+    color: #f89616;
+    margin-bottom: 10px;
+}
+.stat-item h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+.stat-item p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Phần Team */
+.team-section {
+    padding: 60px 0;
+    background-color: #fafafa;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.section-subheading {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột mặc định */
+    gap: 30px;
+}
+
+/* Card thành viên */
+.team-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-top: 4px solid #cc0000;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.team-card.leader {
+    border-top: 4px solid #f89616; /* Màu riêng cho trưởng nhóm */
+    background: #fffbf5;
+}
+
+.member-img {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.member-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.member-info h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.member-info .role {
     display: inline-block;
-    position: relative;
-    margin-left: 20px;
-    margin-top: 30px;
-    left: 240px;
-    background-color: rgb(255, 255, 255);
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 1px 3px black;
+    font-size: 13px;
+    color: #fff;
+    background-color: #cc0000;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
-#h33:hover{
-    opacity: 1;
-    transform: scale(1.1);
-}
-#h22 a{
-    text-decoration: none;
-    color:rgb(10, 10, 10);
-    font-size: 17px;
-    font-weight: bold;
-    text-shadow: 0px 3px 3px rgb(228, 224, 224),1px 1px 1px rgb(101, 101, 100);
-    
-}
-#h44{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 17px;
-    font-weight: bold;
-    text-shadow: 0px 3px 3px rgb(228, 224, 224),1px 1px 1px rgb(101, 101, 100);
-}
-#h55{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 17px;
-    font-weight: bold;
-    text-shadow: 0px 3px 3px rgb(228, 224, 224),1px 1px 1px rgb(101, 101, 100);
-}
-#h66{
-    background-color: rgb(255, 255, 255);
-    width: 190px;
-    height: 33px;
-    border-radius: 5px;
-    position:absolute;
-    margin-top: -50px;
-    margin-left: 1310px;
-    box-shadow: 0px 1px 3px black;
-}
-#h77{
-    width: 40%;
-    height: 100%;
-    float: left;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    padding: 4px;
-}
-#h88{
-    width: 60%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    background-color: transparent;
-    float: left;
-    border-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 4px;
-    padding-left: 14px;
-}
-#h66:hover{
-    opacity: 1;
-    transform: scale(1.1);
-}
-#section{
-    width: 100%;
-    height: 582px;
-    overflow: auto;
-}
-#s1{
-    width: 1000px;
-    height: 500px;
-    margin-top: 50px;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 25px;
-    box-shadow: 0px 3px 5px black;
-}
-#s3{
-    width: 100%;
-    height: 500px;
-    border-radius: 25px;
-   
-}
-#s4{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 50px;
-    text-align: center;
-    padding-top: 20px;
-    color: rgb(0, 0, 0);
-    font-style: italic;
-    text-shadow: 0px 3px 5px rgb(82, 81, 80);
-}
-#s5{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 20px;
-    text-align: justify;
-    padding-top: 20px;
-    color: rgb(106, 103, 103);
-    font-style: italic;
-    padding: 20px;
-    
-}
-#s6{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 20px;
-    text-align: justify;
-    padding-top: 20px;
-    color: rgb(106, 103, 103);
-    font-style: italic;
-    padding: 20px;
-
-    text-align: center;
+.team-card.leader .role {
+    background-color: #f89616;
 }
 
-#footer{
-    width: 100%;
-    height: 80px;
-    clear: both;
-    overflow: auto;
-    
+.task-list {
+    list-style: none;
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin: 0;
 }
-#aaa1 {
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 20px;
-    font-weight: bold;
-    
-}
-#aaa3 {
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 20px;
-    font-weight: bold;
-    
-}
-#aaa5 {
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 20px;
-    font-weight: bold;
-    margin-top: -60px;
-    
-}
-#aaa2 {
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 20px;
-    font-weight: bold;
-    
-}
-#aaa{
 
-margin-left: 5px;
-font-family: 'Times New Roman', Times, serif;
-text-decoration: none;
-color:rgb(0, 0, 0);
-font-size: 18px;
-padding: 20px;
-font-weight: bold;
-text-decoration: underline;
+.task-list li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: start;
 }
-#bbb{
-margin-top: -150px;
-margin-left: 400px;
-font-family: 'Times New Roman', Times, serif;
-text-decoration: none;
-color:rgb(0, 0, 0);
-font-size: 18px;
-padding: 20px;
-font-weight: bold;
-text-decoration: underline;
+
+.task-list li i {
+    color: #28a745; /* Màu xanh lá cho icon check */
+    margin-right: 8px;
+    margin-top: 3px;
+    font-size: 12px;
 }
-#ccc{
-    margin-top: -60px;
-    margin-left: 400px;
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 20px;
-    font-weight: bold;
+
+/* Responsive */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên tablet */
+    }
 }
-#contact-info {
-margin-top: 20px;
-padding: 10px;
-background-color: rgb(237, 222, 196);
-border-radius: 10px;
-box-shadow: 0px 1px 3px black;
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
+    }
+    .stats-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
 }
+
+/* --- FOOTER CSS (GIỮ NGUYÊN) --- */
 .footer {
-    padding-top: 10px;;
     width: 100%;
-    height: 80px;
-    clear: both;
-    
+    background-color: #fff; 
 }
+
 .main-footer {
     background-color: #f8f8f8; 
     padding-top: 50px;
@@ -438,13 +411,13 @@ box-shadow: 0px 1px 3px black;
     color: #333;
     font-size: 14px;
     width: 100%;
-    margin-top: 30px;
 }
 
 .footer-content {
     max-width: 1400px;
     margin: 0 auto;
     padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .footer-col {
@@ -532,11 +505,7 @@ box-shadow: 0px 1px 3px black;
     background-color: #cc0000;
 }
 
-.bocongthuong img {
-    margin-top: 15px;
-}
-
-.dmca-badge img {
+.bocongthuong img, .dmca-badge img {
     margin-top: 15px;
 }
 
@@ -547,13 +516,4 @@ box-shadow: 0px 1px 3px black;
     color: #777;
     font-size: 13px;
     background-color: #fff;
-    margin-top: -30px;
-}
-
-.footer-bottom p {
-    margin: 5px 0;
-}
-
-.footer-bottom strong {
-    color: #555;
 }

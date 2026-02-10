@@ -5,18 +5,23 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
 }
 
 #home {
-    background-image: linear-gradient(rgb(60, 232, 72), rgb(143, 234, 32), rgb(244, 120, 62));
+    background-image: linear-gradient(135deg, rgb(187, 187, 187), rgb(68, 68, 68), rgb(255, 255, 255));
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-header {
     background-color: #fff;
     width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
 .header-top {
@@ -34,7 +39,6 @@ body {
     gap: 10px;
 }
 .logo-text i { font-size: 30px; color: #333; }
-
 
 .search-area {
     flex-grow: 1;
@@ -207,116 +211,183 @@ body {
 
 #section {
     width: 100%;
-    padding-bottom: 50px;
+    padding: 50px 0;
+    flex-grow: 1; 
 }
 
-#s1, #s11 {
-    width: 1200px; 
-    height: auto;
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero-section {
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
     min-height: 500px;
-    margin: 50px auto;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 5px;
-    box-shadow: 0px 1px 2px black;
-    overflow: hidden; 
-    padding-bottom: 20px;
 }
 
-#s2 {
-    width: 50%;
-    float: left;
+.hero-image {
+    flex: 1;
+    overflow: hidden;
 }
 
-#s2 img {
+.hero-image img {
     width: 100%;
-    height: 500px; 
+    height: 100%;
     object-fit: cover;
-    border-radius: 25px 0 0 25px;
+    transition: transform 0.5s ease;
 }
 
-#s3 {
-    width: 50%;
-    float: left;
-    padding: 20px;
-}
-
-#s4 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 50px;
-    text-align: center;
-    padding-top: 20px;
-    color: rgb(248, 150, 22);
-    font-style: italic;
-    text-shadow: 0px 3px 5px rgb(246, 124, 24);
-}
-
-#s5 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 18px;
-    text-align: justify;
-    padding: 20px;
-    color: rgb(106, 103, 103);
-    font-style: italic;
-}
-
-#s6 {
-    width: 200px;
-    height: 45px;
-    border-radius: 5px;
-    text-align: center;
-    background-image: linear-gradient(rgb(243, 238, 234), rgb(235, 227, 213), rgb(176, 166, 149));
-    box-shadow: 0px 2px 5px black;
-    margin: 20px auto;
-    line-height: 45px;
-}
-
-#s6 a {
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    text-shadow: 0px 3px 3px rgb(228, 224, 224), 1px 1px 1px rgb(101, 101, 100);
-    text-decoration: none;
-    display: block;
-}
-
-#s6:hover {
-    opacity: 0.8;
+.hero-image:hover img {
     transform: scale(1.05);
 }
 
-#sr1, #sr2 {
-    display: block;
-    width: 1200px;
-    margin: 20px auto;
-    border-radius: 10px;
+.hero-content {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, #ffffff, #fdfdfd);
 }
 
-#s111 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 50px;
+.welcome-text {
+    font-family: 'Dancing Script', cursive;
+    color: #f89616;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.brand-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.cta-button a {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(254, 180, 123, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta-button a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(254, 180, 123, 0.6);
+}
+
+.banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.banner-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 350px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.banner-item:hover img {
+    transform: scale(1.1);
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+}
+
+.banner-overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.video-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
-    padding-top: 20px;
-    color: rgb(149, 104, 14);
-    font-style: italic;
-    text-shadow: 0px 3px 5px rgb(60, 59, 59);
 }
 
-#s11 video {
-    width: 80%;
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    color: #95680e;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.video-wrapper video {
+    width: 100%;
     display: block;
-    margin: 25px auto;
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+    }
+    .hero-image {
+        height: 300px;
+    }
+    .hero-content {
+        padding: 30px;
+    }
+    .banner-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer {
-    padding-top: 10px;;
     width: 100%;
-    height: 80px;
-    clear: both;
-    
+    background-color: #fff; 
 }
+
 .main-footer {
     background-color: #f8f8f8; 
     padding-top: 50px;
@@ -324,13 +395,13 @@ body {
     color: #333;
     font-size: 14px;
     width: 100%;
-    margin-top: 30px;
 }
 
 .footer-content {
     max-width: 1400px;
     margin: 0 auto;
     padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .footer-col {
@@ -418,11 +489,7 @@ body {
     background-color: #cc0000;
 }
 
-.bocongthuong img {
-    margin-top: 15px;
-}
-
-.dmca-badge img {
+.bocongthuong img, .dmca-badge img {
     margin-top: 15px;
 }
 
@@ -433,13 +500,4 @@ body {
     color: #777;
     font-size: 13px;
     background-color: #fff;
-    margin-top: -30px;
-}
-
-.footer-bottom p {
-    margin: 5px 0;
-}
-
-.footer-bottom strong {
-    color: #555;
 }
